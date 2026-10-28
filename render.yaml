@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: shopee-affiliate-app
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn web_app:app
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 10000
